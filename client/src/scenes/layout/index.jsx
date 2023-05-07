@@ -13,14 +13,12 @@ const Layout = () => {
   const isNonMobile = useMediaQuery("(min-width:700px)");
   // This will return true if mediaQuery is satified, that is for desktop.
 
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   // To check toggle the sidebar
   const userId = useSelector((state) => {
     return state.global.userID
   });
   const { data } = useGetUserQuery(userId);
-
-  console.log(data);
 
   return (
     <Box display={isNonMobile ? "flex" : "block"} width="100%" height="100%">
